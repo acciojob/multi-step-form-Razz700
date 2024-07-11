@@ -1,4 +1,3 @@
-import { type } from 'cypress/types/jquery';
 import React, { useState } from 'react'
 
 const Step = (props) => {
@@ -63,7 +62,7 @@ const Step = (props) => {
             <input onChange={handleexpiry} type='text' id='expiry_date' placeholder='MM/YY' /><br/>
             <p id='error' style={{color:'red'}}>{error}</p>
             <input type='button' value='Previous' onClick={()=>handleprevious(2)} />
-            <button>Submit</button>
+            <button type='submit'>Submit</button>
         </div>
     </div>
   )
