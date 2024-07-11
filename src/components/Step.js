@@ -39,7 +39,8 @@ const Step = (props) => {
             <input type='text' id='first_name' placeholder='First Name' /><br/>
             <label for='last_name' >Last Name:</label><br/>
             <input type='text' id='last_name' placeholder='Last Name' /><br/>
-            <input type='button' onClick={()=>handlenext(0)}>Next</input>
+            {/* <input type='button' value='Next' /> */}
+            <button onClick={()=>handlenext(0)} type='button'>Next</button>
         </div>
         
         {/* {props.currentstep[1] &&  */}
