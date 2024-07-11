@@ -39,7 +39,7 @@ const Step = (props) => {
             <input type='text' id='first_name' placeholder='First Name' /><br/>
             <label for='last_name' >Last Name:</label><br/>
             <input type='text' id='last_name' placeholder='Last Name' /><br/>
-            {/* <input type='button' value='Next' /> */}
+            {/* <input onClick={()=>handlenext(0)} type='button' value='Next' /> */}
             <button onClick={()=>handlenext(0)} type='button'>Next</button>
         </div>
         
@@ -50,8 +50,10 @@ const Step = (props) => {
             <input type='text' id='model' placeholder='Brand' /><br/>
             <label for='car_price' >Model:</label><br/>
             <input type='text' id='car_price' placeholder='Last Name' /><br/>
-            <input type='button' value='Previous' onClick={()=>handleprevious(1)}/>
-            <input type='button' value='Next' onClick={()=>handlenext(1)}/>
+            {/* <input type='button' value='Previous' onClick={()=>handleprevious(1)}/>
+            <input type='button' value='Next' onClick={()=>handlenext(1)}/> */}
+             <button type='button' onClick={()=>handleprevious(1)}>Previous</button>
+             <button type='button'  onClick={()=>handlenext(1)}>Next</button>
         </div>
         {/* {props.currentstep[2] && */}
          <div id='step3' className={'form '+props.currentstep[2]}>
@@ -62,7 +64,8 @@ const Step = (props) => {
             <label  for='expiry_date' >Expiration Date:</label><br/>
             <input onChange={handleexpiry} type='text' id='expiry_date' placeholder='MM/YY' /><br/>
             <p id='error' style={{color:'red'}}>{error}</p>
-            <input type='button' value='Previous' onClick={()=>handleprevious(2)} />
+            {/* <input type='button' value='Previous' onClick={()=>handleprevious(2)} /> */}
+            <button type='button' onClick={()=>handleprevious(2)}>Previous</button>
             <button type='submit'>Submit</button>
         </div>
     </div>
