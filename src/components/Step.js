@@ -3,13 +3,13 @@ import React, { useState } from 'react'
 const Step = (props) => {
     const handlenext=(step)=>{
         if (step==0) {
-            props.setcurrentstep([false,true,false]);
+            props.setcurrentstep(['hide','','hide']);
         }else if(step==1){
-            props.setcurrentstep([false,false,true]); 
+            props.setcurrentstep(['hide','hide','']); 
         }
          }
     const handleprevious=(step)=>{
-        step==1?props.setcurrentstep([true,false,false]):props.setcurrentstep([false,true,false]);
+        step==1?props.setcurrentstep(['','hide','hide']):props.setcurrentstep(['hide','','hide']);
         }
   const [error,seterror]=useState('');
   const [error1,seterror1]=useState('');
@@ -32,15 +32,18 @@ const Step = (props) => {
         }
   return (
     <div>
-        {props.currentstep[0] && <div id='step1' className='form'>
+        {/* {props.currentstep[0] && */}
+         <div id='step1' className={'form '+props.currentstep[0]}>
             <h3>Customer Details</h3>
             <label for='first_name' >First Name:</label><br/>
             <input type='text' id='first_name' placeholder='First Name' /><br/>
             <label for='last_name' >Last Name:</label><br/>
             <input type='text' id='last_name' placeholder='Last Name' /><br/>
             <button onClick={()=>handlenext(0)}>Next</button>
-        </div>}
-        {props.currentstep[1] && <div id='step2' className='form'>
+        </div>
+        
+        {/* {props.currentstep[1] &&  */}
+        <div id='step2' className={'form '+props.currentstep[1]}>
             <h3>Car Details</h3>
             <label for='model'>Brand:</label><br/>
             <input type='text' id='model' placeholder='Brand' /><br/>
@@ -48,8 +51,9 @@ const Step = (props) => {
             <input type='text' id='car_price' placeholder='Last Name' /><br/>
             <button onClick={()=>handleprevious(1)}>Previous</button>
             <button onClick={()=>handlenext(1)}>Next</button>
-        </div>}
-        {props.currentstep[2] && <div id='step3' className='form'>
+        </div>
+        {/* {props.currentstep[2] && */}
+         <div id='step3' className={'form '+props.currentstep[2]}>
             <h3>Payment Details</h3>
             <label for='card_info' >Credit card Number:</label><br/>
             <input onChange={handlecardnumber} type='number' id='card_info' placeholder='123456789012' /><br/>
@@ -59,7 +63,7 @@ const Step = (props) => {
             <p id='error' style={{color:'red'}}>{error}</p>
             <button onClick={()=>handleprevious(2)}>Previous</button>
             <button>Submit</button>
-        </div>}
+        </div>
     </div>
   )
 }
