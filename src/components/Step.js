@@ -32,7 +32,7 @@ const Step = (props) => {
         }
   return (
     <div>
-        {props.currentstep[0] && <div className='form'>
+        {props.currentstep[0] && <div id='step1' className='form'>
             <h3>Customer Details</h3>
             <label for='first_name' >First Name:</label><br/>
             <input type='text' id='first_name' placeholder='First Name' /><br/>
@@ -40,7 +40,7 @@ const Step = (props) => {
             <input type='text' id='last_name' placeholder='Last Name' /><br/>
             <button onClick={()=>handlenext(0)}>Next</button>
         </div>}
-        {props.currentstep[1] && <div className='form'>
+        {props.currentstep[1] && <div id='step2' className='form'>
             <h3>Car Details</h3>
             <label for='model'>Brand:</label><br/>
             <input type='text' id='model' placeholder='Brand' /><br/>
@@ -49,7 +49,7 @@ const Step = (props) => {
             <button onClick={()=>handleprevious(1)}>Previous</button>
             <button onClick={()=>handlenext(1)}>Next</button>
         </div>}
-        {props.currentstep[2] && <div className='form'>
+        {props.currentstep[2] && <div id='step3' className='form'>
             <h3>Payment Details</h3>
             <label for='card_info' >Credit card Number:</label><br/>
             <input onChange={handlecardnumber} type='number' id='card_info' placeholder='123456789012' /><br/>
