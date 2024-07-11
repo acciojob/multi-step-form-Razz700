@@ -1,3 +1,4 @@
+import { type } from 'cypress/types/jquery';
 import React, { useState } from 'react'
 
 const Step = (props) => {
@@ -39,7 +40,7 @@ const Step = (props) => {
             <input type='text' id='first_name' placeholder='First Name' /><br/>
             <label for='last_name' >Last Name:</label><br/>
             <input type='text' id='last_name' placeholder='Last Name' /><br/>
-            <button onClick={()=>handlenext(0)}>Next</button>
+            <input type='button' value='Next' onClick={()=>handlenext(0)}/>
         </div>
         
         {/* {props.currentstep[1] &&  */}
@@ -49,8 +50,8 @@ const Step = (props) => {
             <input type='text' id='model' placeholder='Brand' /><br/>
             <label for='car_price' >Model:</label><br/>
             <input type='text' id='car_price' placeholder='Last Name' /><br/>
-            <button onClick={()=>handleprevious(1)}>Previous</button>
-            <button onClick={()=>handlenext(1)}>Next</button>
+            <input type='button' value='Previous' onClick={()=>handleprevious(1)}/>
+            <input type='button' value='Next' onClick={()=>handlenext(1)}/>
         </div>
         {/* {props.currentstep[2] && */}
          <div id='step3' className={'form '+props.currentstep[2]}>
@@ -61,7 +62,7 @@ const Step = (props) => {
             <label  for='expiry_date' >Expiration Date:</label><br/>
             <input onChange={handleexpiry} type='text' id='expiry_date' placeholder='MM/YY' /><br/>
             <p id='error' style={{color:'red'}}>{error}</p>
-            <button onClick={()=>handleprevious(2)}>Previous</button>
+            <input type='button' value='Previous' onClick={()=>handleprevious(2)} />
             <button>Submit</button>
         </div>
     </div>
